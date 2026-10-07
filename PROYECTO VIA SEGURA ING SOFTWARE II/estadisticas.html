@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VíaSegura | Estadísticas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">VS</span>
+        <span>VíaSegura</span>
+      </a>
+
+      <div class="links">
+        <a href="index.html">Inicio</a>
+        <a href="reportar.html">Reportar</a>
+        <a href="incidentes.html">Incidentes</a>
+        <a class="active" href="estadisticas.html">Estadísticas</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ======================= CONTENIDO ======================= -->
+  <main>
+
+    <!-- Encabezado de página -->
+    <section class="page-heading">
+      <div class="container">
+        <span class="eyebrow">RESUMEN</span>
+        <h1>Estadísticas del sistema</h1>
+        <p>Indicadores calculados a partir de los reportes guardados en el navegador.</p>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="section compact">
+      <div class="container">
+
+        <!-- Indicadores principales -->
+        <div class="stats-grid">
+          <div class="stat">
+            <span>Total de reportes</span>
+            <strong id="total">0</strong>
+          </div>
+
+          <div class="stat">
+            <span>Con lesionados</span>
+            <strong id="injured">0</strong>
+          </div>
+
+          <div class="stat">
+            <span>Relacionados con velocidad</span>
+            <strong id="speed">0</strong>
+          </div>
+
+          <div class="stat">
+            <span>Posible alcohol</span>
+            <strong id="alcohol">0</strong>
+          </div>
+        </div>
+
+        <!-- Gráficas -->
+        <div class="dashboard-grid">
+          <div class="chart-card">
+            <div class="card-heading">
+              <h2>Incidentes por tipo</h2>
+              <span>Distribución</span>
+            </div>
+            <div id="typeChart" class="bars"></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="card-heading">
+              <h2>Factores asociados</h2>
+              <span>Distribución</span>
+            </div>
+            <div id="factorChart" class="bars"></div>
+          </div>
+        </div>
+
+        <!-- Nota aclaratoria -->
+        <div class="note">
+          Estos datos son demostrativos y se almacenan en el navegador. No representan estadísticas oficiales ni determinan la causa legal de un accidente.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer>
+    <div class="container footer-inner">
+      <strong>VíaSegura</strong>
+      <span>Proyecto académico de aplicación web para seguridad vial.</span>
+    </div>
+  </footer>
+
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

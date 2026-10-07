@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VíaSegura | Reportar</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header">
+        <nav class="nav container">
+
+            <!-- Logo / Marca -->
+            <a class="brand" href="index.html">
+                <span class="brand-mark">VS</span>
+                <span>VíaSegura</span>
+            </a>
+
+            <!-- Navegación principal -->
+            <div class="links">
+                <a href="index.html">Inicio</a>
+                <a class="active" href="reportar.html">Reportar</a>
+                <a href="incidentes.html">Incidentes</a>
+                <a href="estadisticas.html">Estadísticas</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main>
+
+        <!-- Encabezado de la página -->
+        <section class="page-heading">
+            <div class="container">
+
+                <span class="eyebrow">NUEVO REPORTE</span>
+
+                <h1>Registrar un incidente vial</h1>
+
+                <p>
+                    Completa los datos disponibles.
+                    El prototipo guarda la información en este navegador.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== FORMULARIO ==================== -->
+        <section class="section compact">
+            <div class="container narrow">
+
+                <form id="incidentForm" class="form-card">
+
+                    <!-- Encabezado del formulario -->
+                    <div class="form-heading">
+
+                        <div>
+                            <span class="form-number">01</span>
+
+                            <h2>Información del incidente</h2>
+                        </div>
+
+                        <span class="required-note">
+                            * Campos obligatorios
+                        </span>
+
+                    </div>
+
+
+                    <!-- ==================== CAMPOS DEL FORMULARIO ==================== -->
+                    <div class="form-grid">
+
+                        <!-- Fecha -->
+                        <label>
+                            Fecha *
+                            <input
+                                type="date"
+                                id="fecha"
+                                required
+                            >
+                        </label>
+
+
+                        <!-- Hora -->
+                        <label>
+                            Hora *
+                            <input
+                                type="time"
+                                id="hora"
+                                required
+                            >
+                        </label>
+
+
+                        <!-- Tipo de incidente -->
+                        <label>
+                            Tipo de incidente *
+
+                            <select id="tipo" required>
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option>
+                                    Colisión
+                                </option>
+
+                                <option>
+                                    Atropello
+                                </option>
+
+                                <option>
+                                    Caída de motociclista
+                                </option>
+
+                                <option>
+                                    Choque con objeto
+                                </option>
+
+                                <option>
+                                    Otro
+                                </option>
+                            </select>
+                        </label>
+
+
+                        <!-- Condición de la vía -->
+                        <label>
+                            Condición de vía *
+
+                            <select id="via" required>
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option>
+                                    Seca
+                                </option>
+
+                                <option>
+                                    Mojada
+                                </option>
+
+                                <option>
+                                    En reparación
+                                </option>
+
+                                <option>
+                                    Otro
+                                </option>
+                            </select>
+                        </label>
+
+
+                        <!-- Ubicación -->
+                        <label>
+                            Ubicación *
+
+                            <input
+                                type="text"
+                                id="ubicacion"
+                                placeholder="Ej. Calle 24 con carrera 29"
+                                required
+                            >
+                        </label>
+
+
+                        <!-- Municipio -->
+                        <label>
+                            Municipio *
+
+                            <input
+                                type="text"
+                                id="municipio"
+                                placeholder="Ej. Yopal"
+                                required
+                            >
+                        </label>
+
+
+                        <!-- Vehículos involucrados -->
+                        <label>
+                            Vehículos involucrados *
+
+                            <input
+                                type="number"
+                                id="vehiculos"
+                                min="1"
+                                value="1"
+                                required
+                            >
+                        </label>
+
+
+                        <!-- Personas lesionadas -->
+                        <label>
+                            Personas lesionadas *
+
+                            <input
+                                type="number"
+                                id="lesionados"
+                                min="0"
+                                value="0"
+                                required
+                            >
+                        </label>
+
+
+                        <!-- Factor asociado -->
+                        <label class="full">
+                            Factor presuntamente asociado *
+
+                            <select id="factor" required>
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option>
+                                    Exceso de velocidad
+                                </option>
+
+                                <option>
+                                    Posible alcohol
+                                </option>
+
+                                <option>
+                                    Distracción
+                                </option>
+
+                                <option>
+                                    Condiciones de la vía
+                                </option>
+
+                                <option>
+                                    No determinado
+                                </option>
+                            </select>
+                        </label>
+
+
+                        <!-- Descripción -->
+                        <label class="full">
+                            Descripción *
+
+                            <textarea
+                                id="descripcion"
+                                rows="5"
+                                placeholder="Describe brevemente lo ocurrido..."
+                                required
+                            ></textarea>
+                        </label>
+
+                    </div>
+
+
+                    <!-- ==================== ACCIONES ==================== -->
+                    <div class="form-actions">
+
+                        <a
+                            class="btn secondary"
+                            href="incidentes.html"
+                        >
+                            Cancelar
+                        </a>
+
+                        <button
+                            class="btn primary"
+                            type="submit"
+                        >
+                            Guardar reporte
+                        </button>
+
+                    </div>
+
+
+                    <!-- Mensaje del formulario -->
+                    <p
+                        id="formMsg"
+                        class="message"
+                    ></p>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container footer-inner">
+
+            <strong>VíaSegura</strong>
+
+            <span>
+                Proyecto académico de aplicación web para seguridad vial.
+            </span>
+
+        </div>
+    </footer>
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

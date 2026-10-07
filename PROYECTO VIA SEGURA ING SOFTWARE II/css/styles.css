@@ -1,0 +1,927 @@
+/* ==========================================================================
+   ÍNDICE
+   1. Variables y reset
+   2. Base y layout
+   3. Header y navegación
+   4. Botones
+   5. Hero (inicio)
+   6. Secciones y tarjetas de características
+   7. Encabezado de página
+   8. Formularios
+   9. Listado de incidentes
+   10. Detalle de incidente
+   11. Estadísticas y dashboard
+   12. Footer
+   13. Responsive
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIABLES Y RESET
+   ========================================================================== */
+
+:root {
+  --navy: #172033;
+  --blue: #1e86cb;
+  --blue-dark: #3e82e1;
+  --muted: #667085;
+  --line: #e5e9ef;
+  --bg: #f5f7fa;
+  --white: #fff;
+  --yellow: #e0a400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   2. BASE Y LAYOUT
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--navy);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.narrow {
+  max-width: 920px;
+}
+
+.text-link,
+.card-link {
+  color: var(--blue);
+  font-weight: 800;
+  font-size: .88rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+
+/* ==========================================================================
+   3. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(236, 227, 221, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 20;
+}
+
+.nav {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 850;
+  font-size: 1.15rem;
+  letter-spacing: -.02em;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: white;
+  font-size: .75rem;
+  letter-spacing: .02em;
+}
+
+.links {
+  display: flex;
+  gap: 28px;
+  height: 100%;
+  align-items: center;
+}
+
+.links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: #596579;
+  font-weight: 650;
+  font-size: .94rem;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--blue);
+}
+
+.links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+}
+
+
+/* ==========================================================================
+   4. BOTONES
+   ========================================================================== */
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 18px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: .93rem;
+}
+
+.primary {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 5px 14px rgba(18, 100, 214, .18);
+}
+
+.primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: #e9eef5;
+  color: var(--navy);
+}
+
+.secondary:hover {
+  background: #dde5ef;
+}
+
+
+/* ==========================================================================
+   5. HERO (INICIO)
+   ========================================================================== */
+
+.hero {
+  padding: 90px 0 78px;
+  background: linear-gradient(135deg, #edf5ff 0%, #fff 58%, #f7f9fc 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.03;
+  letter-spacing: -.055em;
+  margin: 4px 0 22px;
+  max-width: 760px;
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: #5d6879;
+  max-width: 670px;
+}
+
+/* Panel lateral del hero */
+
+.hero-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 16px 45px rgba(22, 38, 70, .08);
+}
+
+.panel-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: .8rem;
+  font-weight: 750;
+  color: #596579;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25a269;
+  box-shadow: 0 0 0 4px #e8f6ef;
+}
+
+.panel-bottom {
+  display: flex;
+  gap: 45px;
+  padding: 20px 2px 2px;
+}
+
+.panel-bottom div {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-bottom strong {
+  font-size: 1.65rem;
+}
+
+.panel-bottom span {
+  font-size: .78rem;
+  color: #7b8492;
+}
+
+/* Ilustración de la vía */
+
+.road-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  height: 205px;
+  padding-top: 18px;
+  background: #1d2738;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.road-visual::before,
+.road-visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #e7edf5;
+  opacity: .85;
+}
+
+.road-visual::before {
+  left: 15%;
+}
+
+.road-visual::after {
+  right: 15%;
+}
+
+.road-line {
+  position: relative;
+  z-index: 2;
+  width: 4px;
+  height: 48px;
+  background: #f6c744;
+}
+
+.vehicle {
+  position: absolute;
+  z-index: 3;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  color: transparent;
+}
+
+.vehicle-one {
+  top: 78px;
+  left: 42%;
+}
+
+.vehicle-two {
+  top: 137px;
+  right: 40%;
+}
+
+
+/* ==========================================================================
+   6. SECCIONES Y TARJETAS DE CARACTERÍSTICAS
+   ========================================================================== */
+
+.section {
+  padding: 72px 0;
+}
+
+.section.compact {
+  padding-top: 42px;
+}
+
+.section-title {
+  margin-bottom: 28px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  letter-spacing: -.03em;
+  margin: 2px 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd8e8;
+  box-shadow: 0 12px 30px rgba(22, 38, 70, .07);
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #edf4ff;
+  color: var(--blue);
+  font-size: .75rem;
+  font-weight: 850;
+}
+
+.feature-card h3 {
+  margin: 22px 0 7px;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  color: var(--muted);
+  font-size: .92rem;
+  min-height: 68px;
+}
+
+
+/* ==========================================================================
+   7. ENCABEZADO DE PÁGINA
+   ========================================================================== */
+
+.page-heading {
+  padding: 62px 0 35px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-heading h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.03;
+  letter-spacing: -.055em;
+  margin: 0 0 10px;
+  max-width: 760px;
+}
+
+.page-heading p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 25px;
+  text-decoration: none;
+  color: var(--blue);
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+
+/* ==========================================================================
+   8. FORMULARIOS
+   ========================================================================== */
+
+/* Tarjetas contenedoras (compartidas con detalle y gráficas) */
+
+.form-card,
+.detail-card,
+.chart-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(22, 38, 70, .04);
+}
+
+.form-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-heading h2 {
+  display: inline-block;
+  margin: 0 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.form-number {
+  display: inline-grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.required-note {
+  font-size: .75rem;
+  color: #8a94a3;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: .87rem;
+  font-weight: 750;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+/* Campos */
+
+input,
+select,
+textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid #d3dbe6;
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: #fff;
+  color: var(--navy);
+  transition: .15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #e4efff;
+  border-color: var(--blue);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Acciones y mensajes */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.message {
+  font-weight: 750;
+  margin: 16px 0 0;
+}
+
+.message.success {
+  color: #19734b;
+}
+
+.message.error {
+  color: #b42318;
+}
+
+
+/* ==========================================================================
+   9. LISTADO DE INCIDENTES
+   ========================================================================== */
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  padding-left: 13px;
+  border: 1px solid #d3dbe6;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.search-wrap span {
+  font-size: 1.2rem;
+  color: #8a94a3;
+}
+
+.search-wrap input {
+  border: 0;
+  outline: 0;
+}
+
+.results-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  color: #7b8492;
+  font-size: .85rem;
+}
+
+.incident-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.incident {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 21px;
+  transition: .2s;
+}
+
+.incident:hover {
+  border-color: #cbd8e8;
+  box-shadow: 0 9px 25px rgba(22, 38, 70, .06);
+}
+
+.incident-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.incident h3 {
+  margin: 0 0 2px;
+  font-size: 1.02rem;
+}
+
+.incident small {
+  color: #818b99;
+}
+
+.incident p {
+  margin: 9px 0;
+  color: #596579;
+  font-size: .9rem;
+}
+
+.incident-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: #7b8492;
+  font-size: .78rem;
+}
+
+.badge {
+  height: max-content;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #edf4ff;
+  color: var(--blue);
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+
+/* ==========================================================================
+   10. DETALLE DE INCIDENTE
+   ========================================================================== */
+
+.detail-code {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #edf4ff;
+  color: var(--blue);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 22px 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.detail-item {
+  padding: 15px 17px;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-item:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.detail-item:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+
+.detail-item span {
+  display: block;
+  margin-bottom: 3px;
+  color: #8992a0;
+  font-size: .75rem;
+}
+
+.detail-item strong {
+  font-size: .92rem;
+}
+
+.detail-description {
+  padding-top: 8px;
+  color: #596579;
+}
+
+
+/* ==========================================================================
+   11. ESTADÍSTICAS Y DASHBOARD
+   ========================================================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 22px;
+}
+
+.stat span {
+  color: #717c8c;
+  font-size: .8rem;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 2.1rem;
+  letter-spacing: -.04em;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.card-heading h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.card-heading span {
+  font-size: .75rem;
+  color: #8992a0;
+}
+
+/* Gráfica de barras */
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 35px;
+  align-items: center;
+  gap: 10px;
+  font-size: .8rem;
+}
+
+.bar-track {
+  height: 9px;
+  background: #edf1f5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  min-width: 3px;
+  background: var(--blue);
+  border-radius: 10px;
+}
+
+.bar-value {
+  text-align: right;
+  font-weight: 800;
+}
+
+/* Nota informativa */
+
+.note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #fff8e5;
+  border: 1px solid #f0dfac;
+  border-left: 4px solid var(--yellow);
+  border-radius: 8px;
+  color: #634e0b;
+  font-size: .84rem;
+}
+
+
+/* ==========================================================================
+   12. FOOTER
+   ========================================================================== */
+
+footer {
+  padding: 28px 0;
+  background: var(--navy);
+  color: #dbe3ef;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-inner span {
+  color: #aeb9c9;
+  font-size: .84rem;
+}
+
+
+/* ==========================================================================
+   13. RESPONSIVE (móvil, hasta 760px)
+   ========================================================================== */
+
+@media (max-width: 760px) {
+
+  /* Navegación */
+  .nav {
+    height: auto;
+    min-height: 68px;
+    padding: 10px 0;
+  }
+
+  .links {
+    gap: 13px;
+  }
+
+  .links a {
+    font-size: .78rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: 2.65rem;
+  }
+
+  /* Grids a una sola columna */
+  .hero-grid,
+  .feature-grid,
+  .incident-list,
+  .stats-grid,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Formularios */
+  .form-grid,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .form-heading,
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  /* Detalle */
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-item:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .detail-item:nth-last-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Gráfica de barras */
+  .bar-row {
+    grid-template-columns: 115px 1fr 28px;
+  }
+}

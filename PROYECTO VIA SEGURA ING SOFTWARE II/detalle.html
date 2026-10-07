@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VíaSegura | Detalle</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">VS</span>
+        <span>VíaSegura</span>
+      </a>
+
+      <div class="links">
+        <a href="index.html">Inicio</a>
+        <a href="reportar.html">Reportar</a>
+        <a class="active" href="incidentes.html">Incidentes</a>
+        <a href="estadisticas.html">Estadísticas</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ======================= CONTENIDO ======================= -->
+  <main>
+
+    <!-- Encabezado de página -->
+    <section class="page-heading">
+      <div class="container">
+        <a class="back-link" href="incidentes.html">← Volver a incidentes</a>
+        <span class="eyebrow">DETALLE DEL REPORTE</span>
+        <h1 id="detailTitle">Incidente</h1>
+        <p id="detailSubtitle"></p>
+      </div>
+    </section>
+
+    <!-- Detalle del incidente (se rellena desde js/app.js) -->
+    <section class="section compact">
+      <div class="container narrow">
+        <div id="detailCard" class="detail-card"></div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer>
+    <div class="container footer-inner">
+      <strong>VíaSegura</strong>
+      <span>Proyecto académico de aplicación web para seguridad vial.</span>
+    </div>
+  </footer>
+
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
